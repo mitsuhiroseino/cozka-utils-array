@@ -9,7 +9,7 @@ type Predicate<T> = Parameters<typeof _remove>[1] | { [K in keyof T]?: T[K] };
  * @param predicate
  */
 export default function remove<T>(array: T[], predicate: Predicate<T>): T[] {
-  if (isPlainObject(predicate)) {
+  if (array && isPlainObject(predicate)) {
     const values = predicate;
     const keys = Object.keys(values);
     predicate = keys.length

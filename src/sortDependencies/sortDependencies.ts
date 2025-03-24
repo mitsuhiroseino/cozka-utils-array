@@ -13,6 +13,9 @@ export default function sortDependencies<I>(
   array: I[],
   options: SortDependenciesOptions<I> = {},
 ): I[] {
+  if (!array) {
+    return array;
+  }
   const {
     idProp = 0,
     depsProp = 1,

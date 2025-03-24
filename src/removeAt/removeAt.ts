@@ -9,13 +9,13 @@ export default function removeAt<T>(
   array: T[] | null | undefined,
   index: number,
   count: number = 1,
-): T[] | null | undefined {
-  if (array != null && !array.length && count > 0) {
+): T[] {
+  if (array != null && array.length && count > 0) {
     if (index < 0) {
       // 末尾から指定数分削除する場合はindexを補正
       index = Math.max(0, array.length + index - count + 1);
     }
     return array.splice(index, count);
   }
-  return array;
+  return [];
 }

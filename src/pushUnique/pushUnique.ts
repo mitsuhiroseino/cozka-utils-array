@@ -5,14 +5,16 @@
  * @param items
  */
 export default function pushUnique<T>(array: T[], items: T[]): T[] {
-  const existingSet = new Set(array);
+  if (array) {
+    const existingSet = new Set(array);
 
-  for (const item of items) {
-    if (existingSet.has(item)) {
-      continue;
+    for (const item of items) {
+      if (existingSet.has(item)) {
+        continue;
+      }
+      existingSet.add(item);
+      array.push(item);
     }
-    existingSet.add(item);
-    array.push(item);
   }
 
   return array;

@@ -9,12 +9,15 @@ import asArray from '../asArray';
  * @param keySeparator flat=trueの場合にのみ有効。各キーを結合するセパレーター
  * @returns
  */
-export default function toMap<I>(
+export default function toRecord<I>(
   array: I[],
   properties: string | string[],
   flat: boolean = false,
   keySeparator: string = '.',
 ): { [key: string]: I } {
+  if (!array) {
+    return {};
+  }
   const propNames = asArray(properties),
     set = flat
       ? (object, keys, value) => (object[keys.join(keySeparator)] = value)

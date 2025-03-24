@@ -5,13 +5,16 @@
  * @returns 新しい配列
  */
 export default function rotate<T>(array: T[], count: number = 1): T[] {
-  const newArray = array.slice(0);
-  if (0 < count) {
-    if (newArray.length) {
-      for (let i = 0; i < count; i++) {
-        newArray.push(newArray.shift() as T);
+  if (array) {
+    const newArray = array.slice(0);
+    if (0 < count) {
+      if (newArray.length) {
+        for (let i = 0; i < count; i++) {
+          newArray.push(newArray.shift() as T);
+        }
       }
     }
+    return newArray;
   }
-  return newArray;
+  return array;
 }

@@ -9,4 +9,4 @@ export { default as remove } from './remove';
 export { default as removeAt } from './removeAt';
 export { default as rotate } from './rotate';
 export { default as sortDependencies } from './sortDependencies';
-export { default as toMap } from './toMap';
+export { default as toRecord } from './toRecord';

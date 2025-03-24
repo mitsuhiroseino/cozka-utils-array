@@ -3,6 +3,8 @@
  * @param array
  */
 export default function clear<T>(array: T[]): T[] {
-  array.length = 0;
+  if (array) {
+    array.length = 0;
+  }
   return array;
 }
